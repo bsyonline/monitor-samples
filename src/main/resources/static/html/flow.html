@@ -1,0 +1,71 @@
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                Flow Cfg Panel
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="cfg-label">名称</td>
+                        <td>
+                            <input type="text" id="flow-name" placeholder="Name">
+                            <div id="flow-id"></div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="cfg-label">日期</td>
+                        <td>
+                            <input type="text" id="flow-date" placeholder="Date">
+                            格式：yyyyMMdd
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cfg-label">线程数</td>
+                        <td>
+                            <input type="text" id="thread-num" value="20">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cfg-label">任务项</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Task <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" t-type="t-change" class="drop-task-name">工商信息变更生成</a></li>
+                                    <li><a href="#" t-type="t-validate" class="drop-task-name">变更数据校验</a></li>
+                                    <li><a href="#" t-type="t-push" class="drop-task-name">变更推送</a></li>
+                                    <li><a href="#" t-type="t-stat" class="drop-task-name">统计索引生成</a></li>
+                                    <li><a href="#" t-type="t-info" class="drop-task-name">企业基本信息索引生成</a></li>
+                                </ul>
+                            </div>
+                            <button type="button" class="btn btn-default" onclick="clean()">
+                                重新配置
+                            </button>
+                            <div id="task-list">
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+                    <button id="save-cfg" type="submit" class="btn btn-default" onclick="saveCfg()">保存配置</button>
+                    <button id="exec-btn" type="submit" disabled="disabled" class="btn btn-default" onclick="exec()">执行</button>
+                </form>
+            </div>
+        </div>
+
+<script>
+
+    $(function(){
+        $(".drop-task-name").bind("click",function(){
+            addTask($(this).attr("t-type"),$(this).text())
+        })
+        $("#exec-btn").attr("")
+    })
+
+
+</script>

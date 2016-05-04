@@ -1,0 +1,103 @@
+.container {
+    width: 1300px !important;
+}
+.header{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.current{
+    background-color: cornflowerblue;
+    color:white;
+    font-weight: 800;
+    font-size: 14pt;
+}
+
+.footer{
+    border-top: solid 1px #ddd;
+    height:50px;
+    margin-top:20px;
+}
+
+.task-item{
+    width: 600px;
+    margin: 5px;
+}
+.task-item span{
+    margin:5px;
+}
+.sub-ck-body{
+    height:20px;
+    float:left;
+}
+.sub-ck{
+    float:left;
+    margin-left: 5px;
+    width: 10px;
+}
+.sub-ck-name{
+    float:left;
+    margin-left: 5px;
+    width: 120px;
+}
+.ck-panel,.ck-panel .panel-heading{
+    border-style: none;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.00) !important;
+}
+.cfg-label{
+    width:150px;
+    text-align:right;
+}
+#flow-id{
+    display: none;
+}
+.face{
+    font-size: 24pt;
+    font-weight: 600;
+    margin: 15px;
+}
+/* list */
+.cell-flow{
+    text-align: center;
+}
+.cell-left{
+    text-align: left;
+    vertical-align:middle !important;
+}
+.cell-right{
+    text-align: right;
+    vertical-align:middle !important;
+}
+.cell-center{
+    text-align: center;
+    vertical-align:middle !important;
+}
+.cell-width{
+    min-width:290px;
+}
+.cell-short{
+    min-width:60px;
+}
+.cell-middle{
+    min-width:85px;
+}
+
+.table > tbody + tbody {
+    border-top: 0px solid #ddd;
+}
+.flow-detail{
+    display: none;
+}
+
+.cell-icon{
+    text-align: right;vertical-align:middle !important;
+}
+.tb-task, .tb-item{
+    width:95%;
+    margin-left: 5%;
+}
+.inner-task{
+    text-align: right;
+}
+.cell-collapse{
+    border-bottom: solid 0px !important;
+}

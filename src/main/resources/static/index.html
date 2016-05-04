@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data-engine Cfg</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="face">
+        Data Engine 配置界面
+    </div>
+    <div class="header">
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="index.html">Home</a></li>
+                <li role="presentation" id="flow-cfg" name="flow"><a href="javascript:void(0)">流程配置</a></li>
+                <li role="presentation" id="flow-list" name="list"><a href="javascript:void(0)">流程列表</a></li>
+                <li role="presentation" id="data-clean" name="clean"><a href="javascript:void(0)">数据清理</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="dashboard">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                Global Cfg Panel
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="cfg-label">HDFS主节点</td>
+                        <td>
+                            <input type="text" id="hdfs-host">
+                            <div id="flow-id"></div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="cfg-label">HDFS端口号</td>
+                        <td>
+                            <input type="text" id="hdfs-port">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cfg-label">线程数111</td>
+                        <td>
+                            <input type="text" id="thread-num" value="20">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cfg-label">data-engine地址</td>
+                        <td>
+                            <input type="text" id="de-host">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cfg-label">data-engine端口号</td>
+                        <td>
+                            <input type="text" id="de-port">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cfg-label">shell脚本路径</td>
+                        <td>
+                            <input type="text" id="sh-path">
+                        </td>
+                    </tr>
+
+                </table>
+
+
+                    <button id="global-cfg" type="submit" class="btn btn-default" onclick="globalCfg()">保存配置</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+    </div>
+</div>
+<script>
+
+    $(function(){
+        $("li[role='presentation']").bind("click",function(){
+            var name = $(this).attr("name")
+            $("#dashboard").load("html/"+name+".html")
+            $("li[role='presentation']").removeClass("active")
+            $(this).addClass("active")
+        })
+    })
+
+
+
+</script>
+</body>
+</html>

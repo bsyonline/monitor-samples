@@ -1,0 +1,40 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Flow List Panel
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+            <tr>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center cell-width">编号</th>
+                <th class="cell-center">名称</th>
+                <th class="cell-center">批次日期</th>
+                <th class="cell-center cell-short">状态</th>
+                <th class="cell-center">开始时间</th>
+                <th class="cell-center">结束时间</th>
+                <th class="cell-center">耗时</th>
+                <th class="cell-center cell-middle">操作</th>
+            </tr>
+            <tbody id="flow-table">
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $.get("/flow", null, function (data) {
+            $(data).each(function (n, flow) {
+                $("#flow-table").append(flowListHtml(n, flow))
+            })
+        }, 'json')
+    })
+
+
+
+</script>
